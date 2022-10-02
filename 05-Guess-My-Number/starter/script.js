@@ -8,7 +8,7 @@ const displayMessage = function (message) {
     document.querySelector('.message').textContent = message;
 };
 
-document.querySelector('.check').addEventListener('click', function () {
+const checkAnswer = function () {
     const guess = Number(document.querySelector('.guess').value);
 
     if (score > 0) {
@@ -31,10 +31,24 @@ document.querySelector('.check').addEventListener('click', function () {
             document.querySelector('.score').textContent = score;
         }
     }
-    if (score === 0) {
-        displayMessage('You lost :(');
-    }
-});
+};
+
+if (score === 0) {
+    displayMessage('You lost :(');
+}
+const checkButton = document
+    .querySelector('.check')
+    .addEventListener('click', function () {
+        checkAnswer();
+    });
+
+const enterCheck = document
+    .querySelector('.guess')
+    .addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            checkAnswer();
+        }
+    });
 
 document.querySelector('.again').addEventListener('click', function () {
     score = 20;

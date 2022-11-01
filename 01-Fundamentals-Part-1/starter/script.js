@@ -373,4 +373,5 @@ const bill = 430;
 const tip = (bill >= 300 || bill <= 50) ? bill * .2 : bill * .15;
 
 console.log(`The bill was ${bill}, the tip ${tip}, and the total value ${bill + tip}`);
+//test
 */
